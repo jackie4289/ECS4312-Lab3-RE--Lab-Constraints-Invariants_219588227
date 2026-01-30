@@ -1,3 +1,4 @@
+from datetime import datetime
 
 class DispenseEvent:
     """
@@ -29,8 +30,10 @@ class DispenseEvent:
         self.medication = medication
         self.dose_mg = dose_mg
         self.quantity = quantity
+        self.dispensed_date = datetime.now().date()
 
     # TODO Task 4: Define and check system invariants 
+    @staticmethod
     def invariant_holds(existing_events, new_event):
         """
         Check whether adding a new dispense event preserves all system invariants.
@@ -42,7 +45,22 @@ class DispenseEvent:
         Returns:
             bool: True if all invariants hold after adding new_event; False otherwise.
             
+        Invariants checked:
+            1. A patient may not receive the same medication more than once per day.
+            2. All doses are expressed in milligrams (standardized units).
+            
         """
-
+        # Invariant 1: Check no duplicate medication dispensing on the same day for the same patient
+        for event in existing_events:
+            if (event.patient_id == new_event.patient_id and
+                event.medication == new_event.medication and
+                event.dispensed_date == new_event.dispensed_date):
+                return False
         
-        pass
+        # Invariant 2: All doses must be in milligrams (positive numeric type)
+        # This is implicitly enforced by the constructor constraints
+        # but we can verify it's a positive number
+        if not isinstance(new_event.dose_mg, (int, float)) or new_event.dose_mg <= 0:
+            return False
+        
+        return True
