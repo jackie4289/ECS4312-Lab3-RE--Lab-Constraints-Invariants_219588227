@@ -1,10 +1,10 @@
 Task 2: Requirement Classification
 Classification of Elicitation Questions
 
-1. Should the system check for drug interactions when a patient is prescribed multiple medications simultaneously or within a short timeframe? ,FR
+1: Should the system check for drug interactions when a patient is prescribed multiple medications simultaneously or within a short timeframe? ,FR
 -- This describes a capability or service the system should provide—checking drug interactions when dispensing, therefore it is a functional requirement. 
 
-2. Patient Prescription Verification. Should the system verify that a patient has a valid, active prescription from a licensed healthcare provider before dispensing any medication? ,C
+2: Patient Prescription Verification. Should the system verify that a patient has a valid, active prescription from a licensed healthcare provider before dispensing any medication? ,C
 -- This is a validation rule that must be checked before a dispense event is created, therefore it is a constraint.
 
 3: Medication Inventory Management. Should the system track and enforce medication inventory levels, including minimum thresholds and automatic reordering alerts? ,FR

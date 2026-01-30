@@ -1,9 +1,9 @@
 Task 1: Requirements Elicitation
 Elicitation Questions for the Medication Dispensing System
 
-1. Should the system check for drug interactions when a patient is prescribed multiple medications simultaneously or within a short timeframe?
+1: Should the system check for drug interactions when a patient is prescribed multiple medications simultaneously or within a short timeframe?
 
-2. Patient Prescription Verification. Should the system verify that a patient has a valid, active prescription from a licensed healthcare provider before dispensing any medication?
+2: Patient Prescription Verification. Should the system verify that a patient has a valid, active prescription from a licensed healthcare provider before dispensing any medication?
 
 3: Medication Inventory Management. Should the system track and enforce medication inventory levels, including minimum thresholds and automatic reordering alerts?
 
